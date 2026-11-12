@@ -7,6 +7,13 @@ import Article from './components/Article.js';
 
 import data from './db.json';
 
+const modules = import.meta.glob('./photos/*.png' , 
+  {
+      eager:true,
+      import:'default'
+  });
+const photos = Object.entries(modules).map(([path,url]) => url);
+
 function App()
 {
   let nav = 
@@ -18,12 +25,11 @@ function App()
      "Контакты" : "/contacts"
   };
   let db = data.people;
-
-  return (
-    <div className="App">
+    return (
+      <div className="App">
       <Header />
       <Nav nav={nav} />
-      <Article db={db} />
+      <Article db={db} photos={photos} />
       <Footer />
     </div>
   );

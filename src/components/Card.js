@@ -6,7 +6,8 @@ function Card(props)
 {
     return(
         <div className="card">
-            <img src={props.human.photo} alt="photo" />
+            {console.log(props.photo)}
+            {<img src={props.photo} alt="photo" />}
             <div>
                 {props.human.name}
                 {props.human.surname}

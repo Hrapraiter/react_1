@@ -11,7 +11,7 @@ function Article(props)
                     index =>
                         {
                             //return(console.log(props.db[index]))
-                            return (<Card human={props.db[index]}/>)                        
+                            return (<Card human={props.db[index]} photo={props.photos.at(index)} />)                        
                         }
                 )
                 //console.log(props)
